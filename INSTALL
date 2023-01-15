@@ -1,0 +1,9 @@
+Building Namoto
+
+See doc/readme-qt.rst for instructions on building Namoto-Qt,
+the intended-for-end-users, nice-graphical-interface, reference
+implementation of Namoto.
+
+See doc/build-*.txt for instructions on building namotod,
+the intended-for-services, no-graphical-interface, reference
+implementation of Namoto.
