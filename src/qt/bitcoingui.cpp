@@ -552,11 +552,11 @@ void BitcoinGUI::setNumBlocks(int count, int nTotalBlocks)
 
     if(count < nTotalBlocks)
     {
-        tooltip = tr("Processed %1 of %2 (estimated) blocks of transaction history.").arg(count).arg(nTotalBlocks);
+        tooltip = tr("Processed %1 of %2 (estimated) Namoto blocks.").arg(count).arg(nTotalBlocks);
     }
     else
     {
-        tooltip = tr("Processed %1 blocks of transaction history.").arg(count);
+        tooltip = tr("Processed %1 Namoto blocks.").arg(count);
     }
 
     // Set icon state: spinning if catching up, tick otherwise
