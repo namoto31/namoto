@@ -1,7 +1,7 @@
 TEMPLATE = app
 TARGET = namoto-qt
 macx:TARGET = "Namoto-Qt"
-VERSION = 1.0.0.1
+VERSION = 1.0.0.2
 INCLUDEPATH += src src/json src/qt
 QT += core gui network
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
