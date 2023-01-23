@@ -1173,6 +1173,11 @@ void MapPort(bool)
 // The first name is used as information source for addrman.
 // The second name should resolve to a list of seed addresses.
 static const char *strMainNetDNSSeed[][2] = {
+    {"official seed", "64.190.113.181"},
+    {"seed04.altcoinbuilders.com", "45.77.77.239"},
+    {"seed03.altcoinbuilders.com", "149.28.51.213"},
+    {"seed02.altcoinbuilders.com", "108.61.149.178"},
+    {"seed01.altcoinbuilders.com", "45.77.153.55"},
     {NULL, NULL}
 };
 
@@ -1225,7 +1230,7 @@ void ThreadDNSAddressSeed()
 
 unsigned int pnSeed[] =
 {
-    0x0100007f
+    0x40BE71B5, 0x2D4D4DEF, 0x951C33D5, 0x6C3D95B2, 0x2D4D9937
 };
 
 void DumpAddresses()
@@ -1290,7 +1295,7 @@ void ThreadOpenConnections()
         boost::this_thread::interruption_point();
 
         // Add seed nodes if IRC isn't working
-        if (addrman.size()==0 && (GetTime() - nStart > 60) && !fTestNet)
+        if (addrman.size()==0 && (GetTime() - nStart > 2) && !fTestNet)
         {
             std::vector<CAddress> vAdd;
             for (unsigned int i = 0; i < ARRAYLEN(pnSeed); i++)
