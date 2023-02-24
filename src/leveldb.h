@@ -4,8 +4,11 @@
 #ifndef BITCOIN_LEVELDB_H
 #define BITCOIN_LEVELDB_H
 
-#include "serialize.h"
+#include "util.h"
 
+#include "serialize.h"
+#include <leveldb/env.h>
+#include <leveldb/cache.h>
 #include <leveldb/db.h>
 #include <leveldb/write_batch.h>
 
@@ -79,7 +82,7 @@ private:
 public:
     CLevelDB(const boost::filesystem::path &path, size_t nCacheSize, bool fMemory = false, bool fWipe = false);
     ~CLevelDB();
-
+    [[deprecated("Deprecated from C++11. To be updated later.")]];
     template<typename K, typename V> bool Read(const K& key, V& value) throw(leveldb_error) {
         CDataStream ssKey(SER_DISK, CLIENT_VERSION);
         ssKey.reserve(ssKey.GetSerializeSize(key));

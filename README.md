@@ -22,14 +22,26 @@ The rest is the same as Bitcoin.
 For more information, as well as an immediately useable, binary version of
 the Namoto client sofware, see http://www.namoto.org.
 
-Build Namoto-QT from source code:
+Build Linux Namoto-QT from source code:
 
-	cd src; make -f makefile.unix
+	**-------Require Clean Unix--------**
+	sudo apt-get install make
+	wget https://www.openssl.org/source/openssl-1.0.2l.tar.gz
+	tar -xzvf openssl-1.0.2l.tar.gz
+	cd openssl-1.0.2l 
+	sudo ./config
+	sudo make install
+	**--------------------------------**
+	
+	cd src
+	make -f makefile.unix -Wno-deprecated
 	cd ..
 	qmake
 	make
 
 	./namoto-qt
+	
+	******************Enjoy The Wallet***********************
 
 Nodes
 ----------------
@@ -79,7 +91,8 @@ submit new unit tests for old code.
 
 Unit tests for the core code are in `src/test/`. To compile and run them:
 
-    cd src; make -f makefile.unix test
+    cd src
+	make -f makefile.unix test -Wno-deprecated
 
 Unit tests for the GUI code are in `src/qt/test/`. To compile and run them:
 
